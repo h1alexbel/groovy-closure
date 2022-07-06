@@ -21,7 +21,7 @@ class Employee implements WithId {
     def methodMissing(String name, Object args) {
         println "missing method $name is invoked: $args"
         def field = name - "findBy"
-        println "select * from Employee where $field = ${args[0]}"
+        println "select * from Employee where $field = ${args[0 as String]}"
     }
 
     def propertyMissing(String name) {
